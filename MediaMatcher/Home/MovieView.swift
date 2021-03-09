@@ -115,7 +115,9 @@ struct MovieView : View {
                 })
         )
         .onTapGesture {
-            details.toggle() //show details
+            withAnimation(.spring()) {
+                details.toggle() //show details
+            }
         }
     }
 }

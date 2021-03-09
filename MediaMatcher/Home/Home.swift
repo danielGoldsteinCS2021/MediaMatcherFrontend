@@ -17,8 +17,7 @@ struct Home : View {
         Movie(id: 4, name: "The Social Network", image: "p0", actor: " Jesse Eisenberg, Andrew Garfield, Justin Timberlake and more...", genre: "Biography, Drama", synopsis: "As Harvard student Mark Zuckerberg creates the social networking site that would become known as Facebook, he is sued by the twins who claimed he stole their idea, and by the co-founder who was later squeezed out of the business.", offset: 0),
         Movie(id: 5, name: "The Social Network", image: "p0", actor: " Jesse Eisenberg, Andrew Garfield, Justin Timberlake and more...", genre: "Biography, Drama", synopsis: "As Harvard student Mark Zuckerberg creates the social networking site that would become known as Facebook, he is sued by the twins who claimed he stole their idea, and by the co-founder who was later squeezed out of the business.", offset: 0),
     ]
-    @State var details = false // when true shows the description of movie
-    
+    @Binding var details: Bool // when true shows the description of movie    
     var body: some View{
         VStack{
             if !details {
@@ -31,10 +30,6 @@ struct Home : View {
                         .font(.title)
                         .fontWeight(.bold)
                     Spacer(minLength: 0)
-                    Button(action: {}, label: {
-                        Image(systemName: "bell")
-                            .renderingMode(.template)
-                    })
                 }
                 .foregroundColor(.black)
                 .padding()
@@ -50,6 +45,6 @@ struct Home : View {
             .padding([.horizontal, .bottom], details ? 0 : 20)
             .animation(.easeInOut(duration: 0.6)) // animation for view
         }
-        .background(Color.black.opacity(0.06).edgesIgnoringSafeArea(.all))
+        .background(Color(hex: "#f0e9e6").edgesIgnoringSafeArea(.all))
     }
 }
