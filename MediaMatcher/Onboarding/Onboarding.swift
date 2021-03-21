@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct Onboarding: View {
-    let titles = ["Snap", "Pack", "Map", "Track"]
-    let bodies = ["Take a photo of food you \ncannot finish", "Seal, pack, and schedule pickup \nof your surplus food","Locate donation hotspots and \nfood items in demand", "Rely on our driver to deliver your \nfood safely to non-profit recipient"]
+    let titles = ["Create", "Swipe", "Match", "Profile"]
+    let bodies = ["Make a room \nfor your friends to join", "Right means yes \nLeft means no","We will find a movie \nthe whole room will enjoy", "Customize your profile\n"]
     @State var slide = 0
     @Binding var login: Bool
 
@@ -20,14 +20,14 @@ struct Onboarding: View {
                     Spacer()
                     NavigationLink(destination: Login(login: $login)) {
                         Text("Login")
-                            .foregroundColor(Color(hex: "#255359"))
+                            .foregroundColor(Color(hex: "#B03838"))
                     }
                 }.padding([.trailing, .top], 30)
                 Spacer()
                 if slide == 0 {
                     Rectangle().fill(Color.clear).frame(height: 60)
                     Text("Welcome to")
-                        .foregroundColor(Color(hex: "#255359"))
+                        .foregroundColor(Color(hex: "#B03838"))
                         .font(.body)
                         .padding(.bottom, 5)
                         .padding(.top,22)
@@ -35,11 +35,11 @@ struct Onboarding: View {
                 }
                 else {
                 Text(titles[slide-1])
-                    .foregroundColor(Color(hex: "#255359"))
+                    .foregroundColor(Color(hex: "#B03838"))
                     .font(.title)
                     .padding(.bottom, 20)
                 Text(bodies[slide-1])
-                    .foregroundColor(Color(hex: "#255359"))
+                    .foregroundColor(Color(hex: "#B03838"))
                     .font(.footnote)
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 20)
@@ -51,13 +51,13 @@ struct Onboarding: View {
                             .foregroundColor(Color(hex: "#fff"))
                             .padding([.vertical],20)
                             .frame(width:220)
-                    }.background(Color(hex: "#255359"))
+                    }.background(Color(hex: "#B03838"))
                 }.cornerRadius(30).padding(.top, 20)
                 Spacer()
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)
-        }.accentColor( Color(hex: "#255359"))
+        }.accentColor( Color(hex: "#B03838"))
     }
 }
 
@@ -69,7 +69,7 @@ struct ImageSlider: View {
             Image("fridgeSpace")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.main.bounds.width, height: 350)
+                .frame(width: UIScreen.main.bounds.width - 100, height: 350)
             Image("onboarding0")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -89,7 +89,7 @@ struct ImageSlider: View {
             }.frame(height: 350)
             VStack {
                 Spacer()
-                HeaderBar(capsuleColor: Color(hex: "#E8E8E8"), highlightColor: Color(hex: "#3E6E79"),slide: $slide, total: 5)
+                HeaderBar(capsuleColor: Color(hex: "#E8E8E8"), highlightColor: Color(hex: "#B03838"),slide: $slide, total: 5)
             }.frame(width: 350, height: 350)
         }
     }

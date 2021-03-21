@@ -44,15 +44,10 @@ struct Register: View {
                         .foregroundColor(Color(hex: "#fff"))
                         .padding([.vertical],15)
                         .frame(width:260)
-                }.background(Color(hex: "#255359"))
+                }.background(Color(hex: "#B03838"))
                 .cornerRadius(10)
             }.padding(.top, 20)
             
-            Text("OR")
-                .foregroundColor(Color(hex: "#255359"))
-                .font(.body)
-                .padding(10)
-
         }
     }
 }

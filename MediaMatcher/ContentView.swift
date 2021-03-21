@@ -16,11 +16,13 @@ struct ContentView: View {
   var body: some View {
     ZStack {
         Home(details: $details)
+            .opacity(showHome ? 0 : 1)
             .offset(y: login ? 0 : 1000)
             .clipShape(details ? LiquidSwipe(offset: CGSize(width: 999999, height: 999999)) : LiquidSwipe(offset: offset))
             .overlay(
                 Image(systemName: details ? "" : "person")
                     .font(.title)
+                    .foregroundColor(Color(hex: "B03838"))
                     .frame(width: 50, height: 50)
                     .contentShape(Rectangle())
                     .gesture(DragGesture().onChanged({ (value) in

@@ -34,7 +34,7 @@ struct ProfilePage: View {
                 .bold()
                 .font(.largeTitle)
             HStack {
-                Text("Enjoys company from husky men")
+                Text("Enjoys Romantic Comedies.")
             }
             Spacer()
         }

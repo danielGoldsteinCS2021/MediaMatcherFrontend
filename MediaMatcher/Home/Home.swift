@@ -29,6 +29,7 @@ struct Home : View {
                     Text("Media Matcher")
                         .font(.title)
                         .fontWeight(.bold)
+                        .foregroundColor(Color(hex: "B03838"))
                     Spacer(minLength: 0)
                 }
                 .foregroundColor(.black)
