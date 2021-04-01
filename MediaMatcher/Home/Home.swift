@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import ConfettiView
+
 
 struct Home : View {
     @State var movies = [
@@ -18,37 +20,74 @@ struct Home : View {
     ]
     @Binding var details: Bool // when true shows the description of movie
     @Binding var showRoomInfo: Bool
+    @Binding var match: Bool
+    @State private var isShowingConfetti: Bool = false
     var body: some View{
-        VStack{
-            if !details {
-                HStack(spacing: 15){ // this is the top title/menu bar
-                    Button(action: {
-                        showRoomInfo = true
-                    }, label: {
-                        Image(systemName: "info.circle")
-                            .renderingMode(.template)
-                            .foregroundColor(Color(hex: "B03838"))
-                    })
-                    Text("MovieMatcher")
-                        .font(.title)
-                        .fontWeight(.bold)
+        let confettiCelebrationView = ConfettiCelebrationView(isShowingConfetti: $isShowingConfetti, timeLimit: 1.5)
+        let playButton =
+            VStack {
+                    Text("Match Found!")
+                        .font(.largeTitle)
                         .foregroundColor(Color(hex: "B03838"))
-                    Spacer(minLength: 0)
+                        .padding(.top, 60)
+                Button(action: {
+                    NotificationCenter.default.post(name: Notification.Name.playConfettiCelebration, object: Bool.self)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        match = true
+                    }
+                }) {
+                    HStack {
+                        Text("Show My Match!")
+                            .foregroundColor(Color(hex: "#fff"))
+                            .padding([.vertical],15)
+                            .frame(width:260)
+                    }.background(Color(hex: "#B03838"))
+                    .cornerRadius(10)
+
                 }
-                .foregroundColor(.black)
-                .padding()
+                .padding(.top, 20)
+                .padding(.bottom, 40)
             }
-            GeometryReader{g in // g is an object that has the remainder of space in the view, which is what we pass to movieview
-                ZStack{
-                    ForEach(movies.reversed()){movie in //reverse so top card is most recent movie
-                        MovieView(movie: movie, details: $details, frame: g.frame(in: .global))
-                            .edgesIgnoringSafeArea(.all) //let card expand to full screen
+            .background(Rectangle().frame(width: UIScreen.main.bounds.width - 40).foregroundColor(.white).cornerRadius(10).shadow(radius: 5))
+            .transition(.slowFadeIn)
+        
+        return ZStack {
+
+            VStack{
+                if !details {
+                    HStack(spacing: 15){ // this is the top title/menu bar
+                        Button(action: {
+//                            showRoomInfo = true
+                            isShowingConfetti = true
+                        }, label: {
+                            Image(systemName: "info.circle")
+                                .renderingMode(.template)
+                                .foregroundColor(Color(hex: "B03838"))
+                        })
+                        Text("MovieMatcher")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(hex: "B03838"))
+                        Spacer(minLength: 0)
+                    }
+                    .foregroundColor(.black)
+                    .padding()
+                }
+                GeometryReader{g in // g is an object that has the remainder of space in the view, which is what we pass to movieview
+                    ZStack{
+                        if !isShowingConfetti { playButton }
+                        confettiCelebrationView
+                        ForEach(movies.reversed()){movie in //reverse so top card is most recent movie
+                            MovieView(movie: movie, details: $details, frame: g.frame(in: .global))
+                                .edgesIgnoringSafeArea(.all) //let card expand to full screen
+                        }
                     }
                 }
+                .padding([.horizontal, .bottom], details ? 0 : 20)
+                .animation(.easeInOut(duration: 0.6)) // animation for view
             }
-            .padding([.horizontal, .bottom], details ? 0 : 20)
-            .animation(.easeInOut(duration: 0.6)) // animation for view
+            .background(Color(hex: "#f0e9e6").edgesIgnoringSafeArea(.all))
+
         }
-        .background(Color(hex: "#f0e9e6").edgesIgnoringSafeArea(.all))
     }
 }

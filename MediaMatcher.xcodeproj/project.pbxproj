@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,8 @@
 		B83C6BA725D76BFA00F34041 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C6BA625D76BFA00F34041 /* MovieView.swift */; };
 		B83C6BAB25D76C5B00F34041 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C6BAA25D76C5B00F34041 /* Home.swift */; };
 		B8AEF5672616581200C1E292 /* RoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AEF5662616581200C1E292 /* RoomInfo.swift */; };
+		B8AEF56B26165E7900C1E292 /* ConfettiView in Frameworks */ = {isa = PBXBuildFile; productRef = B8AEF56A26165E7900C1E292 /* ConfettiView */; };
+		B8AEF56E2616695700C1E292 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AEF56D2616695700C1E292 /* Match.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,7 @@
 		B83C6BA625D76BFA00F34041 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 		B83C6BAA25D76C5B00F34041 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		B8AEF5662616581200C1E292 /* RoomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfo.swift; sourceTree = "<group>"; };
+		B8AEF56D2616695700C1E292 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8AEF56B26165E7900C1E292 /* ConfettiView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +145,7 @@
 				B83C6BA625D76BFA00F34041 /* MovieView.swift */,
 				B83C6BAA25D76C5B00F34041 /* Home.swift */,
 				B8AEF5662616581200C1E292 /* RoomInfo.swift */,
+				B8AEF56D2616695700C1E292 /* Match.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -161,6 +166,9 @@
 			dependencies = (
 			);
 			name = MediaMatcher;
+			packageProductDependencies = (
+				B8AEF56A26165E7900C1E292 /* ConfettiView */,
+			);
 			productName = MediaMatcher;
 			productReference = B83C6B8D25D76A5700F34041 /* MediaMatcher.app */;
 			productType = "com.apple.product-type.application";
@@ -188,6 +196,9 @@
 				Base,
 			);
 			mainGroup = B83C6B8425D76A5700F34041;
+			packageReferences = (
+				B8AEF56926165E7900C1E292 /* XCRemoteSwiftPackageReference "ConfettiView" */,
+			);
 			productRefGroup = B83C6B8E25D76A5700F34041 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -222,6 +233,7 @@
 				B83C6B9325D76A5700F34041 /* ContentView.swift in Sources */,
 				B830ED4325F71C6500E66EF6 /* Register.swift in Sources */,
 				B830ED3A25F71C4A00E66EF6 /* ProfilePage.swift in Sources */,
+				B8AEF56E2616695700C1E292 /* Match.swift in Sources */,
 				B830ED4525F71C6500E66EF6 /* RoomCode.swift in Sources */,
 				B83C6BAB25D76C5B00F34041 /* Home.swift in Sources */,
 				B830ED4A25F71CC600E66EF6 /* ColorHex.swift in Sources */,
@@ -416,6 +428,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B8AEF56926165E7900C1E292 /* XCRemoteSwiftPackageReference "ConfettiView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ziligy/ConfettiView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B8AEF56A26165E7900C1E292 /* ConfettiView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8AEF56926165E7900C1E292 /* XCRemoteSwiftPackageReference "ConfettiView" */;
+			productName = ConfettiView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B83C6B8525D76A5700F34041 /* Project object */;
 }
