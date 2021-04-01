@@ -14,6 +14,7 @@ struct RoomCode: View {
         VStack {
             Text("Enter Room Code")
                 .font(.largeTitle)
+                .foregroundColor(Color(hex: "B03838"))
                 .padding(.top, 60)
             TextField("                 Room Code", text: $roomCode)
                 .frame(width: 260,height:30)
@@ -23,6 +24,18 @@ struct RoomCode: View {
             }) {
                 HStack {
                     Text("Enter")
+                        .foregroundColor(Color(hex: "#fff"))
+                        .padding([.vertical],15)
+                        .frame(width:260)
+                }.background(Color(hex: "#B03838"))
+                .cornerRadius(10)
+            }
+            .padding(.top, 20)
+            Button(action: {
+                roomEntered.toggle()
+            }) {
+                HStack {
+                    Text("Create Room")
                         .foregroundColor(Color(hex: "#fff"))
                         .padding([.vertical],15)
                         .frame(width:260)

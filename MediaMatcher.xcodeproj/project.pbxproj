@@ -22,6 +22,7 @@
 		B83C6BA225D76BB900F34041 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C6BA125D76BB900F34041 /* Movie.swift */; };
 		B83C6BA725D76BFA00F34041 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C6BA625D76BFA00F34041 /* MovieView.swift */; };
 		B83C6BAB25D76C5B00F34041 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83C6BAA25D76C5B00F34041 /* Home.swift */; };
+		B8AEF5672616581200C1E292 /* RoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AEF5662616581200C1E292 /* RoomInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		B83C6BA125D76BB900F34041 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		B83C6BA625D76BFA00F34041 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 		B83C6BAA25D76C5B00F34041 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		B8AEF5662616581200C1E292 /* RoomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				B83C6BA625D76BFA00F34041 /* MovieView.swift */,
 				B83C6BAA25D76C5B00F34041 /* Home.swift */,
+				B8AEF5662616581200C1E292 /* RoomInfo.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				B830ED3925F71C4A00E66EF6 /* LiquidSwipe.swift in Sources */,
 				B83C6BA725D76BFA00F34041 /* MovieView.swift in Sources */,
 				B830ED4425F71C6500E66EF6 /* Onboarding.swift in Sources */,
+				B8AEF5672616581200C1E292 /* RoomInfo.swift in Sources */,
 				B83C6B9325D76A5700F34041 /* ContentView.swift in Sources */,
 				B830ED4325F71C6500E66EF6 /* Register.swift in Sources */,
 				B830ED3A25F71C4A00E66EF6 /* ProfilePage.swift in Sources */,
@@ -353,7 +357,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MediaMatcher/Preview Content\"";
-				DEVELOPMENT_TEAM = UWD7KGMS2S;
+				DEVELOPMENT_TEAM = 4HBR3Z2SY9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MediaMatcher/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -375,7 +379,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MediaMatcher/Preview Content\"";
-				DEVELOPMENT_TEAM = UWD7KGMS2S;
+				DEVELOPMENT_TEAM = 4HBR3Z2SY9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MediaMatcher/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

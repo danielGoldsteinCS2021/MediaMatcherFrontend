@@ -12,10 +12,11 @@ struct ContentView: View {
     @State var offset: CGSize = .zero
     @State var showHome = false
     @State var roomEntered = false
+    @State var showRoomInfo = false
     @State var details = false // when true shows the description of movie
   var body: some View {
     ZStack {
-        Home(details: $details)
+        Home(details: $details, showRoomInfo: $showRoomInfo)
             .opacity(showHome ? 0 : 1)
             .offset(y: login ? 0 : 1000)
             .clipShape(details ? LiquidSwipe(offset: CGSize(width: 999999, height: 999999)) : LiquidSwipe(offset: offset))
@@ -45,7 +46,7 @@ struct ContentView: View {
                     .opacity(offset == .zero ? 1 : 0)
                 ,alignment: .topTrailing
             )
-        if !roomEntered {
+        if !roomEntered || showRoomInfo {
             withAnimation(.spring()) {
                 VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
                             .edgesIgnoringSafeArea(.all)
@@ -54,7 +55,8 @@ struct ContentView: View {
         RoomCode(roomEntered: $roomEntered)
             .offset(y: roomEntered ? 1000 : 0)
         Onboarding(login: $login).ignoresSafeArea(.all, edges: .vertical).offset(y: login ? 1000 : 0)
-
+        RoomInfo(showRoomInfo: $showRoomInfo)
+            .offset(y: showRoomInfo ? 0 : 1000)
         if showHome {
             ProfilePage(offset: $offset, showHome: $showHome)
         }
