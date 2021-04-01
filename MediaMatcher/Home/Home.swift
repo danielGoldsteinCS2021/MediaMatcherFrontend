@@ -57,8 +57,7 @@ struct Home : View {
                 if !details {
                     HStack(spacing: 15){ // this is the top title/menu bar
                         Button(action: {
-//                            showRoomInfo = true
-                            isShowingConfetti = true
+                            showRoomInfo = true
                         }, label: {
                             Image(systemName: "info.circle")
                                 .renderingMode(.template)
